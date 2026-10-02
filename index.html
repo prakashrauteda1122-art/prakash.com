@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<title>Portfolio Navbar</title>
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+nav {
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #f7eaff, #e8f0ff);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #6a4bc3;
+  letter-spacing: 1px;
+}
+
+
+nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  transition: 0.3s ease;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+  color: #6a4bc3;
+  border-bottom: 2px solid #6a4bc3;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 25px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+}
+
+
+.home-section {
+  width: 100%;
+  padding: 120px 60px 60px; /* extra top padding because navbar is fixed */
+  display: flex;
+  justify-content: center;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  border: 3px solid #c7b8ff;
+  background: #fff7ff; /* different from navbar gradient */
+  border-radius: 16px;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+
+.home-image img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #8f6ae7; /* highlighted border */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+.home-text h2 {
+  font-size: 2rem;
+  color: #6a4bc3;
+  margin-bottom: 15px;
+}
+
+.home-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  max-width: 500px;
+}
+
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-image img {
+    width: 220px;
+    height: 220px;
+  }
+}
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #94ccc6;
+    border: 2px solid #556dc7;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #247a73;
+    font-size: 16px;
+    color: #1f242d;
+    font-weight: 600;
+    transition: .5s;
+
+}
+.btn:hover{
+    background: transparent;
+    color: #b9dea6;
+    box-shadow: none;
+}
+
+
+
+
+
+/*  SKILLS SECTION  */
+.skills-section {
+  padding: 80px 60px;
+  background: #f3ecff;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2rem;
+  color: #6a4bc3;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skill-card {
+  width: 150px;
+  height: 50px;
+  background: #96b2e4;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 3px solid #c7b8ff;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    width: 130px;
+    height: 130px;
+  }
+
+  .skill-card img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.projects-section {
+  padding: 80px 60px;
+  background: #fff4ff;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2rem;
+  color: #6a4bc3;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.project-card {
+  width: 260px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  border: 3px solid #c7b8ff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.project-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: #6a4bc3;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 220px;
+  }
+
+  .project-card img {
+    width: 60px;
+    height: 60px;
+  }
+}
+/*  CONTACT SECTION  */
+.contact-section {
+  padding: 80px 60px;
+  background: #f8eaff;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #6a4bc3;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.contact-container h3 {
+  font-size: 1.2rem;
+  color: #6a4bc3;
+  margin-bottom: 10px;
+}
+.contact-container p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+
+   
+
+  
+
+
+
+
+.inquiry-section {
+  padding: 80px 60px;
+  background: #fff7ff;
+  text-align: center;
+}
+
+.inquiry-title {
+  font-size: 2rem;
+  color: #6a4bc3;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.inquiry-form {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 3px solid #c7b8ff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6a4bc3;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 2px solid #d5c6ff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #8f6ae7;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #8f6ae7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #6a4bc3;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+  .contact-card {
+    width: 200px;
+  }
+
+  .inquiry-form {
+    width: 90%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Codewithme</div>
+
+  <ul>
+    <li><a href="#home">ホーム</a></li>
+    <li><a href="#skills">スキル</a></li>
+    <li><a href="#projects">プロジェクト</a></li>
+    <li><a href="#contact">連絡先</a></li>
+  </ul>
+</nav>
+
+<section id="home" class="home-section">
+  <div class="home-container">
+
+    <div class="home-image">
+      <img src="Image/WhatsApp Image 2026-10-02 at 7.12.10 PM.jpeg" alt="My Photo">
+    </div>
+
+    <div class="home-text">
+      <h2>Hello, I'm Prakash</h2>
+      <p>
+        私の強みは、周りとコミュニケーションを取りながら、問題を一人で抱え込まず、すぐに相談して解決
+に取り組めるところです。
+学校やアルバイトでは、分からないことや問題があった時に、自分だけで長い時間悩まず、先輩や周り
+の人に相談することを心がけています。また、仕事では責任感を持ち、決められたことを守り、周りと
+協力して行動することを大切にしています。
+入社後も、分からないことを積極的に質問し、報告・連絡・相談を徹底しながら、チームの一員として
+信頼される社員になりたいです。
+
+      </p>
+       <div class="btn-sci">
+                    <a href="resume/履歴書パラカスラウテダパラカス.pdf" class="btn">履歴書</a>
+                    
+                   
+                     
+                 </div>
+    </div>
+
+  </div>
+</section>
+<section id="skills" class="skills-section">
+  <h2 class="skills-title">スキル</h2>
+
+  <div class="skills-container">
+
+    <div class="skill-card fade-in float">
+      <p>HTML</p>
+    </div>
+
+    <div class="skill-card fade-in float">
+      <p>CSS</p>
+    </div>
+
+    <div class="skill-card fade-in float">
+      <p>Java</p>
+    </div>
+ <div class="skill-card fade-in float">
+  <p>EXCEL</p>
+</div>
+
+<div class="skill-card fade-in float">
+  <p>POWERPOINT</p>
+</div>
+
+<div class="skill-card fade-in float">
+  <p>WORD</p>
+</div>
+
+
+
+    
+   
+  </div>
+</section>
+<section id="projects" class="projects-section">
+  <h2 class="projects-title">プロジェクト</h2>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+     <div class="project-card fade-in float">
+      <h3>COMMING SOON......</h3>
+      
+
+    
+
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <h2 class="contact-title">連絡先</h2>
+   
+      <h3>メール</h3>
+     <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" width="30" height="30">
+      <p>prakashrauteda1122@gmail.com</p>
+   
+      <h3>電話番号</h3>
+      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone Icon" width="30" height="30">
+      <p>+090 6464 1817</p>
+          
+      <h3>住所</h3>
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location Icon" width="30" height="30">
+      <p>千葉市若葉区、日本</p>
+    
+
+  </div>
+</section>
+
+
+<section class="inquiry-section">
+  <h2 class="inquiry-title">お問い合わせ</h2>
+
+  <form class="inquiry-form fade-in">
+
+    <div class="input-group">
+      <label>お名前</label>
+      <input type="text" placeholder="名前を入力してください">
+    </div>
+
+    <div class="input-group">
+      <label>メールアドレス</label>
+      <input type="email" placeholder="メールアドレスを入力してください">
+    </div>
+
+    <div class="input-group">
+      <label>メッセージ</label>
+      <textarea placeholder="メッセージを入力してください"></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+
+  </form>
+</section>
+
+
+</body>
+</html>
